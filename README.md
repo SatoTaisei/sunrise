@@ -1,6 +1,3 @@
-# HeadlessCMS
+# サンライズ計画
 
-- microCMS
-- Next.js
-- TypeScript
-- TailwindCSS
+- メニューリスト
