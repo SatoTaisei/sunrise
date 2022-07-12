@@ -13,9 +13,9 @@ const Home: NextPage<{ menuList: Menu[] }> = ({ menuList }) => {
         <ul className="w-6/12 mx-auto">
           {menuList.map((menu) => (
             <div key={menu.id} className="my-4">
-              <p className="font-bold">{menu.name}</p>
+              <p className="text-sm text-neutral-500">{menu.message}</p>
+              <p className="font-bold text-2xl">{menu.name}</p>
               <p>{menu.category}</p>
-              <p>{menu.message}</p>
             </div>
           ))}
         </ul>
