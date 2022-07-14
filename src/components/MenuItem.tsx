@@ -9,19 +9,19 @@ export const MenuItem: VFC<{ menu: Menu }> = ({ menu }) => {
 
   return (
     <div key={id} className="my-4">
-      <p className="text-xs text-orange-300 ml-16">{message}</p>
-      <div className="flex items-start">
+      <div className="flex items-center">
         <Label category={category[0]} />
-        {img ? (
-          <Link href={img.url}>
-            <a className="hover:text-sky-500">
-              <span className="font-bold text-xl">{name}</span>
-            </a>
-          </Link>
-        ) : (
-          <span className="font-bold text-xl">{name}</span>
-        )}
+        <p className="text-xs text-orange-300">{message}</p>
       </div>
+      {img ? (
+        <Link href={img.url}>
+          <a className="hover:text-sky-500">
+            <span className="font-bold text-xl">{name}</span>
+          </a>
+        </Link>
+      ) : (
+        <span className="font-bold text-xl">{name}</span>
+      )}
     </div>
   );
 };
