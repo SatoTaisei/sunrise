@@ -6,8 +6,6 @@ import Link from "next/link";
 export const MenuItem: VFC<{ menu: Menu }> = ({ menu }) => {
   const { id, message, name, category, img, description } = menu;
 
-  console.log(img);
-
   return (
     <div key={id} className="my-4">
       <p className="text-sm text-orange-300 ml-9">{message}</p>
