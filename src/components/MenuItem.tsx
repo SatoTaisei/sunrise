@@ -1,9 +1,12 @@
 import { VFC } from "react";
 
 import type { Menu } from "@/types/menu";
+import Link from "next/link";
 
 export const MenuItem: VFC<{ menu: Menu }> = ({ menu }) => {
-  const { id, message, name, category } = menu;
+  const { id, message, name, category, img, description } = menu;
+
+  console.log(img);
 
   return (
     <div key={id} className="my-4">
@@ -14,7 +17,15 @@ export const MenuItem: VFC<{ menu: Menu }> = ({ menu }) => {
             {category}
           </span>
         </div>
-        <span className="font-bold text-2xl">{name}</span>
+        {img ? (
+          <Link href={img.url}>
+            <a className="hover:text-sky-500">
+              <span className="font-bold text-2xl">{name}</span>
+            </a>
+          </Link>
+        ) : (
+          <span className="font-bold text-2xl">{name}</span>
+        )}
       </div>
     </div>
   );

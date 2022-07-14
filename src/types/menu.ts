@@ -6,5 +6,9 @@ export type Menu = {
   revisedAt: string;
   name: string;
   category: string;
-  message: string;
+  message?: string;
+  img: {
+    url: string;
+  };
+  description?: string;
 };
