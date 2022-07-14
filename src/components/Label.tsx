@@ -44,20 +44,18 @@ export const Label: VFC<{ category: string }> = ({ category }) => {
   };
 
   return (
-    <div className="w-16">
-      <div
-        className={`${setBackGroundColor(
+    <div
+      className={`${setBackGroundColor(
+        category
+      )} w-auto flex justify-center items-center px-1`}
+    >
+      <span
+        className={`${setTextColor(
           category
-        )} w-auto flex justify-center items-center px-2`}
+        )} text-xs font-bold whitespace-nowrap`}
       >
-        <span
-          className={`${setTextColor(
-            category
-          )} text-xs font-bold whitespace-nowrap`}
-        >
-          {category}
-        </span>
-      </div>
+        {category}
+      </span>
     </div>
   );
 };
