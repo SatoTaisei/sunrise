@@ -28,6 +28,9 @@ export const getStaticProps: GetStaticProps = async () => {
   const data = await client
     .get({
       endpoint: "menu",
+      queries: {
+        limit: 100,
+      },
     })
     .then((res) => res)
     .catch(() => null);
