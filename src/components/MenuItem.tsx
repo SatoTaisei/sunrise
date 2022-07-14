@@ -8,20 +8,20 @@ export const MenuItem: VFC<{ menu: Menu }> = ({ menu }) => {
   const { id, message, name, category, img, description } = menu;
 
   return (
-    <div key={id} className="my-4">
-      <div className="flex items-center">
-        <Label category={category[0]} />
-        <p className="text-xs text-orange-300">{message}</p>
-      </div>
-      {img ? (
+    <div key={id} className="my-6">
+      <p className="text-xs text-neutral-500">{message}</p>
+      {img && description ? (
         <Link href={img.url}>
           <a className="hover:text-sky-500">
-            <span className="font-bold text-xl">{name}</span>
+            <span className="font-bold text-xl py-1">{name}</span>
           </a>
         </Link>
       ) : (
-        <span className="font-bold text-xl">{name}</span>
+        <span className="block font-bold text-xl py-1">{name}</span>
       )}
+      <div className="flex items-center">
+        <Label category={category[0]} />
+      </div>
     </div>
   );
 };

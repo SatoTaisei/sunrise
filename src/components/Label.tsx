@@ -48,7 +48,7 @@ export const Label: VFC<{ category: string }> = ({ category }) => {
       <div
         className={`${setBackGroundColor(
           category
-        )} w-auto flex justify-center items-center mr-2 px-2`}
+        )} w-auto flex justify-center items-center px-2`}
       >
         <span
           className={`${setTextColor(
