@@ -13,7 +13,7 @@ export const MenuItem: VFC<{ menu: Menu }> = ({ menu }) => {
       {img && description ? (
         <Link href={img.url}>
           <a className="hover:text-sky-500">
-            <span className="font-bold text-xl py-1">{name}</span>
+            <span className="block font-bold text-xl py-1">{name}</span>
           </a>
         </Link>
       ) : (
