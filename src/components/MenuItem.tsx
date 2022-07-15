@@ -19,7 +19,7 @@ export const MenuItem: VFC<{ menu: Menu }> = ({ menu }) => {
           ))}
       </div>
       <div className="flex items-center">
-        <span className="inline-block font-bold text-xl py-1">{name}</span>
+        <span className="inline-block font-bold text-2xl py-1">{name}</span>
         {img && description && <Modal imgURL={img.url} />}
       </div>
       <p className="text-xs text-neutral-500">{message}</p>
