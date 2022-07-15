@@ -1,8 +1,8 @@
 import Link from "next/link";
 import { VFC } from "react";
+import { Label } from "@/components/Label";
 
 import type { Menu } from "@/types/menu";
-import { Label } from "@/components/Label";
 
 export const MenuItem: VFC<{ menu: Menu }> = ({ menu }) => {
   const { id, message, name, category, img, description, tag } = menu;
