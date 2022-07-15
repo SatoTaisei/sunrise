@@ -11,4 +11,5 @@ export type Menu = {
     url: string;
   };
   description?: string;
+  tag: [string];
 };
