@@ -10,14 +10,18 @@ const Home: NextPage<{ menuList: Menu[] }> = ({ menuList }) => {
   return (
     <>
       <Header />
+
       <main className="w-full min-h-screen my-8 mx-auto">
-        <p className="text-center font-bold text-xl">- MENU -</p>
-        <ul className="w-10/12 md:8/12 lg:w-6/12 mx-auto">
-          {menuList.map((menu) => (
-            <MenuItem key={menu.id} menu={menu} />
-          ))}
-        </ul>
+        <div className="w-10/12 md:8/12 lg:w-6/12 mx-auto">
+          <h2 className="text-center font-extrabold text-3xl">MENU</h2>
+          <ul>
+            {menuList.map((menu) => (
+              <MenuItem key={menu.id} menu={menu} />
+            ))}
+          </ul>
+        </div>
       </main>
+
       <Footer />
     </>
   );
