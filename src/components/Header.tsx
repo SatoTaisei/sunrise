@@ -6,7 +6,7 @@ import Logo_ORANGE_SVG from "../../public/images/Logo_orange.svg";
 
 export const Header: VFC = () => {
   return (
-    <header className="w-full h-20 bg-blue-900 flex justify-center items-center text-3xl">
+    <header className="w-full h-20 bg-blue-900 flex justify-center justify-items-center">
       <h1 className="relative w-40 h-20 pt-4">
         <picture>
           <Image
