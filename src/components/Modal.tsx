@@ -1,7 +1,14 @@
+import { Label } from "@/components/Label";
 import { Dialog, Transition } from "@headlessui/react";
 import { Fragment, useState, VFC } from "react";
 
-export const Modal: VFC<{ imgURL: string }> = ({ imgURL }) => {
+export const Modal: VFC<{
+  imgURL: string;
+  name: string;
+  category: string;
+  tag: [string];
+  description: string;
+}> = ({ imgURL, name, category, tag, description }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const closeModal = () => {
@@ -17,7 +24,7 @@ export const Modal: VFC<{ imgURL: string }> = ({ imgURL }) => {
       <button
         type="button"
         onClick={openModal}
-        className="w-5 h-5 inline-block rounded-md bg-neutral-400 bg-opacity-20 text-sm font-bold text-white hover:bg-opacity-30 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 ml-2"
+        className="w-5 h-5 inline-block rounded-md bg-neutral-400 bg-opacity-20 text-sm font-bold text-white hover:bg-opacity-30 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 mt-3 ml-2"
       >
         →
       </button>
@@ -48,13 +55,35 @@ export const Modal: VFC<{ imgURL: string }> = ({ imgURL }) => {
                 leaveTo="opacity-0 scale-95"
               >
                 <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={imgURL} alt="" />
+                  <div className="flex items-center pt-8">
+                    <Label category={category} />
+                    {tag &&
+                      tag.map((tag) => (
+                        <span
+                          key={tag}
+                          className="text-xs font-bold text-neutral-300 px-1"
+                        >
+                          #{tag}
+                        </span>
+                      ))}
+                  </div>
                   <Dialog.Title
                     as="h3"
                     className="text-lg font-medium leading-6 text-gray-900"
                   >
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img src={imgURL} alt="" />
+                    {
+                      <h3 className="inline-block font-bold text-2xl py-1">
+                        {name}
+                      </h3>
+                    }
                   </Dialog.Title>
+
+                  <p
+                    dangerouslySetInnerHTML={{ __html: description }}
+                    className="my-6"
+                  />
 
                   <div className="flex justify-center mt-4">
                     <button

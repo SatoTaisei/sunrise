@@ -12,10 +12,8 @@ const Home: NextPage<{ menuList: Menu[] }> = ({ menuList }) => {
       <Header />
 
       <main className="w-full min-h-screen my-8 mx-auto">
-        <div className="w-10/12 md:8/12 lg:w-6/12 mx-auto">
-          <h2 className="text-center font-extrabold text-3xl pt-10 pb-4">
-            MENU
-          </h2>
+        <div className="w-10/12 md:8/12 lg:w-6/12 mx-auto py-6">
+          <h2 className="text-center font-extrabold text-3xl py-4">MENU</h2>
           <ul>
             {menuList.map((menu) => (
               <MenuItem key={menu.id} menu={menu} />
