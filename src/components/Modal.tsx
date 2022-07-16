@@ -19,7 +19,7 @@ export const Modal: VFC<{ imgURL: string }> = ({ imgURL }) => {
         onClick={openModal}
         className="w-5 h-5 inline-block rounded-md bg-neutral-400 bg-opacity-20 text-sm font-bold text-white hover:bg-opacity-30 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 ml-2"
       >
-        ➡
+        →
       </button>
 
       <Transition appear show={isOpen} as={Fragment}>
