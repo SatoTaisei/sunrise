@@ -21,13 +21,12 @@ export const Modal: VFC<{
 
   return (
     <>
-      <button
-        type="button"
+      <a
+        className="inline-block cursor-pointer underline font-bold text-2xl py-1"
         onClick={openModal}
-        className="w-5 h-5 inline-block rounded-md bg-neutral-400 bg-opacity-20 text-sm font-bold text-white hover:bg-opacity-30 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 mt-3 ml-2"
       >
-        →
-      </button>
+        {name}
+      </a>
 
       <Transition appear show={isOpen} as={Fragment}>
         <Dialog as="div" className="relative z-10" onClose={closeModal}>

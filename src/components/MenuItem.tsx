@@ -19,8 +19,7 @@ export const MenuItem: VFC<{ menu: Menu }> = ({ menu }) => {
           ))}
       </div>
       <div className="flex items-start">
-        <span className="inline-block font-bold text-2xl py-1">{name}</span>
-        {img && description && (
+        {img && description ? (
           <Modal
             imgURL={img.url}
             category={category[0]}
@@ -28,6 +27,8 @@ export const MenuItem: VFC<{ menu: Menu }> = ({ menu }) => {
             name={name}
             description={description}
           />
+        ) : (
+          <span className="inline-block font-bold text-2xl py-1">{name}</span>
         )}
       </div>
       <p className="text-xs text-neutral-500">{message}</p>
