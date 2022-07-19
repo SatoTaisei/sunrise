@@ -5,6 +5,7 @@ import { MenuItem } from "@/components/MenuItem";
 
 import type { NextPage, GetStaticProps } from "next";
 import type { Menu } from "@/types/menu";
+import { MenuTitle } from "@/components/MenuTitle";
 
 const Home: NextPage<{ menuList: Menu[] }> = ({ menuList }) => {
   return (
@@ -13,7 +14,8 @@ const Home: NextPage<{ menuList: Menu[] }> = ({ menuList }) => {
 
       <main className="w-full min-h-screen my-8 mx-auto">
         <div className="w-10/12 md:8/12 lg:w-6/12 mx-auto py-6">
-          <h2 className="text-center font-extrabold text-3xl py-4">MENU</h2>
+          <h2 className="font-extrabold text-3xl py-4">MENU</h2>
+          <MenuTitle title={"Wine"} />
           <ul>
             {menuList.map((menu) => (
               <MenuItem key={menu.id} menu={menu} />
