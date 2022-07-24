@@ -8,7 +8,7 @@ export const MenuItem: VFC<{ menu: Menu }> = ({ menu }) => {
   const { message, name, category, img, description, tag } = menu;
 
   return (
-    <div className="my-10">
+    <div className="my-5">
       <div className="flex items-center">
         <Label category={category[0]} />
         {tag &&

@@ -14,7 +14,7 @@ const Home: NextPage<{ menuList: Menu[] }> = ({ menuList }) => {
 
       <main className="w-full min-h-screen my-8 mx-auto">
         <div className="w-10/12 md:8/12 lg:w-6/12 mx-auto py-6">
-          <h2 className="font-extrabold text-5xl pb-4 mt-8">MENU</h2>
+          <h2 className="font-extrabold text-5xl pb-4 mt-10">MENU</h2>
           <hr className="w-12 border border-black bg-black ml-1" />
           <MenuTitle title={"Wine"} />
           <ul>
