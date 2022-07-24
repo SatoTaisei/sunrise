@@ -1,6 +1,6 @@
-import { Label } from "@/components/Label";
-import { Dialog, Transition } from "@headlessui/react";
 import { Fragment, useState, VFC } from "react";
+import { Dialog, Transition } from "@headlessui/react";
+import { Label } from "@/components/Label";
 
 export const Modal: VFC<{
   imgURL: string;
@@ -54,8 +54,10 @@ export const Modal: VFC<{
                 leaveTo="opacity-0 scale-95"
               >
                 <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={imgURL} alt="" />
+                  <picture>
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src={imgURL} alt="" className="object-cover" />
+                  </picture>
                   <div className="flex items-center pt-8">
                     <Label category={category} />
                     {tag &&
