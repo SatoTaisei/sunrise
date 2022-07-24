@@ -5,7 +5,7 @@ export type Menu = {
   publishedAt: string;
   revisedAt: string;
   name: string;
-  category: string;
+  category: [string];
   message?: string;
   img: {
     url: string;
