@@ -1,7 +1,7 @@
 import { client } from "@/libs/client";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
-import { MenuCategoryBlock } from "@/components/MenuCategoryBlock";
+import { MenuByCategoryBlock } from "@/components/MenuByCategoryBlock";
 
 import type { NextPage, GetStaticProps } from "next";
 import type { Menu } from "@/types/menu";
@@ -9,10 +9,13 @@ import type { Menu } from "@/types/menu";
 const Home: NextPage<{ menuList: Menu[] }> = ({ menuList }) => {
   const categoryList = [`赤ワイン`, `日本酒`, `焼酎`, `リキュール`];
   const onlyCategoryArray = menuList.map((menu) => menu.category[0]);
-  const sortedMenuList: Menu[][] = [];
 
+  // 整列後の配列を用意
+  const sortedByCategoryList: Menu[][] = [];
+
+  // カテゴリー別で整列
   categoryList.map((category) => {
-    sortedMenuList.push(
+    sortedByCategoryList.push(
       onlyCategoryArray.reduce((byCategoryList: Menu[], item, index) => {
         if (item === category) {
           byCategoryList.push(menuList[index]);
@@ -30,10 +33,8 @@ const Home: NextPage<{ menuList: Menu[] }> = ({ menuList }) => {
         <div className="w-10/12 md:8/12 lg:w-6/12 mx-auto py-6">
           <h2 className="font-extrabold text-5xl pb-4 mt-10">MENU</h2>
           <hr className="w-12 border border-black bg-black ml-1" />
-
-          {/* TODO: MenuTitleとMenuListを一緒にしないと... */}
-          {sortedMenuList.map((menuList, index) => (
-            <MenuCategoryBlock key={index} menuList={menuList} />
+          {sortedByCategoryList.map((menuList, index) => (
+            <MenuByCategoryBlock key={index} menuList={menuList} />
           ))}
         </div>
       </main>
@@ -44,7 +45,6 @@ const Home: NextPage<{ menuList: Menu[] }> = ({ menuList }) => {
 };
 export default Home;
 
-// TODO: MenuListへ移管
 export const getStaticProps: GetStaticProps = async () => {
   const data = await client
     .get({

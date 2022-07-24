@@ -4,7 +4,9 @@ import { MenuItem } from "@/components/MenuItem";
 
 import type { Menu } from "@/types/menu";
 
-export const MenuCategoryBlock: VFC<{ menuList: Menu[] }> = ({ menuList }) => {
+export const MenuByCategoryBlock: VFC<{ menuList: Menu[] }> = ({
+  menuList,
+}) => {
   return (
     <div className="mt-16">
       <MenuTitle title={menuList[0].category[0]} />
