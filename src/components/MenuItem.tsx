@@ -21,7 +21,7 @@ export const MenuItem: VFC<{ menu: Menu }> = ({ menu }) => {
     <div className="my-8">
       <div className="flex items-center">
         {tag.map((tag, index) => (
-          <span key={index} className="text-xs font-bold text-neutral-300 px-1">
+          <span key={index} className="text-sm font-bold text-neutral-300 px-1">
             #{tag}
           </span>
         ))}
