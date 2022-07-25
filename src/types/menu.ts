@@ -6,10 +6,12 @@ export type Menu = {
   revisedAt: string;
   name: string;
   category: [string];
+  genre: [string];
+  taste?: [string];
+  flavor?: [string];
   message?: string;
-  img: {
+  img?: {
     url: string;
   };
   description?: string;
-  tag: [string];
 };

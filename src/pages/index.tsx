@@ -7,7 +7,7 @@ import type { NextPage, GetStaticProps } from "next";
 import type { Menu } from "@/types/menu";
 
 const Home: NextPage<{ menuList: Menu[] }> = ({ menuList }) => {
-  const categoryList = [`赤ワイン`, `日本酒`, `焼酎`, `リキュール`];
+  const categoryList = [`ワイン`, `日本酒`, `焼酎`, `リキュール`];
   const onlyCategoryArray = menuList.map((menu) => menu.category[0]);
 
   // 整列後の配列を用意
@@ -25,6 +25,8 @@ const Home: NextPage<{ menuList: Menu[] }> = ({ menuList }) => {
     );
   });
 
+  console.log(sortedByCategoryList);
+
   return (
     <>
       <Header />
@@ -33,8 +35,8 @@ const Home: NextPage<{ menuList: Menu[] }> = ({ menuList }) => {
         <div className="w-10/12 md:8/12 lg:w-6/12 mx-auto py-6">
           <h2 className="font-extrabold text-5xl pb-4 mt-10">MENU</h2>
           <hr className="w-12 border border-black bg-black ml-1" />
-          {sortedByCategoryList.map((menuList, index) => (
-            <MenuByCategoryBlock key={index} menuList={menuList} />
+          {sortedByCategoryList.map((byCategoryList, index) => (
+            <MenuByCategoryBlock key={index} byCategoryList={byCategoryList} />
           ))}
         </div>
       </main>

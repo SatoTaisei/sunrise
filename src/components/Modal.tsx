@@ -6,7 +6,7 @@ export const Modal: VFC<{
   imgURL: string;
   name: string;
   category: string;
-  tag: [string];
+  tag: string[];
   description: string;
 }> = ({ imgURL, name, category, tag, description }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -74,16 +74,14 @@ export const Modal: VFC<{
                     as="h3"
                     className="text-lg font-medium leading-6 text-gray-900"
                   >
-                    {
-                      <h3 className="inline-block font-bold text-2xl py-1">
-                        {name}
-                      </h3>
-                    }
+                    <h3 className="inline-block font-bold text-2xl py-1">
+                      {name}
+                    </h3>
                   </Dialog.Title>
 
                   <p
                     dangerouslySetInnerHTML={{ __html: description }}
-                    className="my-6"
+                    className="my-2"
                   />
 
                   <div className="flex justify-center mt-4">

@@ -3,7 +3,7 @@ import { VFC } from "react";
 export const MenuTitle: VFC<{ title: string }> = ({ title }) => {
   const conversionTitle = (title: string) => {
     switch (title) {
-      case `赤ワイン`:
+      case `ワイン`:
         return `Wine`;
       case `日本酒`:
         return `Sake`;
