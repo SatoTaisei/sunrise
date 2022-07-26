@@ -46,7 +46,7 @@ export const Modal: VFC<{
               ))}
             </div>
             <div className="flex items-start">
-              <span className="inline-block font-bold text-xl py-1 whitespace-pre-wrap break-words">
+              <span className="inline-block font-bold text-xl py-1 whitespace-pre-line">
                 {name}
               </span>
             </div>
