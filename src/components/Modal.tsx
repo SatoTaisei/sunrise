@@ -50,7 +50,9 @@ export const Modal: VFC<{
                 {name}
               </span>
             </div>
-            <p className="text-xs text-neutral-500">{message}</p>
+            <p className="inline-block text-xs text-neutral-500 break-normal">
+              {message}
+            </p>
           </div>
         </div>
       </a>
