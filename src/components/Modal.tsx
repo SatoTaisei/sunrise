@@ -22,10 +22,10 @@ export const Modal: VFC<{
     <>
       {/* Modalクリックエリア */}
       <a
-        className="inline-block cursor-pointer font-bold text-2xl whitespace-normal py-1"
+        className="block w-full cursor-pointer drop-shadow-md bg-white rounded-2xl p-2"
         onClick={openModal}
       >
-        <div className="w-full flex items-center drop-shadow-md bg-white rounded-2xl p-2">
+        <div className="flex items-center">
           <div className="h-20 w-20 mr-2">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
