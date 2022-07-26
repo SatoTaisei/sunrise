@@ -39,14 +39,14 @@ export const Modal: VFC<{
               {tag.map((tag, index) => (
                 <span
                   key={index}
-                  className="text-xs font-bold text-rose-500 px-1"
+                  className="text-xs font-bold text-rose-500 px-1 whitespace-nowrap"
                 >
                   #{tag}
                 </span>
               ))}
             </div>
             <div className="flex items-start">
-              <span className="inline-block font-bold text-xl py-1">
+              <span className="inline-block font-bold text-xl py-1 whitespace-pre-wrap break-words">
                 {name}
               </span>
             </div>
