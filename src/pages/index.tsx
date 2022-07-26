@@ -25,8 +25,6 @@ const Home: NextPage<{ menuList: Menu[] }> = ({ menuList }) => {
     );
   });
 
-  console.log(sortedByCategoryList);
-
   return (
     <>
       <Header />
