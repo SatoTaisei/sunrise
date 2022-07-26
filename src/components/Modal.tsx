@@ -1,14 +1,13 @@
 import { Fragment, useState, VFC } from "react";
 import { Dialog, Transition } from "@headlessui/react";
-import { Label } from "@/components/Label";
 
 export const Modal: VFC<{
   imgURL: string;
   name: string;
-  category: string;
   tag: string[];
+  message: string;
   description: string;
-}> = ({ imgURL, name, category, tag, description }) => {
+}> = ({ imgURL, name, tag, message, description }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const closeModal = () => {
@@ -21,11 +20,39 @@ export const Modal: VFC<{
 
   return (
     <>
+      {/* Modalクリックエリア */}
       <a
-        className="inline-block cursor-pointer underline font-bold text-2xl py-1"
+        className="inline-block cursor-pointer font-bold text-2xl whitespace-normal py-1"
         onClick={openModal}
       >
-        {name}
+        <div className="w-full flex items-center drop-shadow-md bg-white rounded-2xl p-2">
+          <div className="h-20 w-20 mr-2">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={imgURL}
+              alt=""
+              className="h-20 w-20 object-cover max-w-fit"
+            />
+          </div>
+          <div>
+            <div className="flex items-center">
+              {tag.map((tag, index) => (
+                <span
+                  key={index}
+                  className="text-sm font-bold text-rose-500 px-1"
+                >
+                  #{tag}
+                </span>
+              ))}
+            </div>
+            <div className="flex items-start">
+              <span className="inline-block font-bold text-2xl py-1">
+                {name}
+              </span>
+            </div>
+            <p className="text-xs text-neutral-500">{message}</p>
+          </div>
+        </div>
       </a>
 
       <Transition appear show={isOpen} as={Fragment}>
@@ -53,13 +80,13 @@ export const Modal: VFC<{
                 leaveFrom="opacity-100 scale-100"
                 leaveTo="opacity-0 scale-95"
               >
+                {/* Modal内コンテンツ */}
                 <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
                   <picture>
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img src={imgURL} alt="" className="object-cover" />
                   </picture>
                   <div className="flex items-center pt-8">
-                    <Label category={category} />
                     {tag &&
                       tag.map((tag) => (
                         <span
