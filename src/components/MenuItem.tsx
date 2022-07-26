@@ -35,14 +35,14 @@ export const MenuItem: VFC<{ menu: Menu }> = ({ menu }) => {
             {tag.map((tag, index) => (
               <span
                 key={index}
-                className="text-sm font-bold text-rose-500 px-1"
+                className="text-xs font-bold text-rose-500 px-1"
               >
                 #{tag}
               </span>
             ))}
           </div>
           <div className="flex items-start">
-            <span className="inline-block font-bold text-2xl py-1">{name}</span>
+            <span className="inline-block font-bold text-xl py-1">{name}</span>
           </div>
           <p className="text-xs text-neutral-500">{message}</p>
         </div>
