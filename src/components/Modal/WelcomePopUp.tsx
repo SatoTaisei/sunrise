@@ -1,5 +1,5 @@
 import { Dialog, Transition } from "@headlessui/react";
-import { Fragment, VFC } from "react";
+import { Dispatch, Fragment, SetStateAction, VFC } from "react";
 import Image from "next/image";
 
 import Logo_ORANGE_SVG from "../../../public/images/Logo_orange.svg";
@@ -7,7 +7,7 @@ import Logo_ORANGE_SVG from "../../../public/images/Logo_orange.svg";
 export const WelcomePopUp: VFC<{
   isPopUpOpen: boolean;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  setIsPopUpOpen: any;
+  setIsPopUpOpen: Dispatch<SetStateAction<boolean>>;
 }> = ({ isPopUpOpen, setIsPopUpOpen }) => {
   const closePopUp = () => {
     setIsPopUpOpen(false);
