@@ -1,5 +1,5 @@
 import { VFC } from "react";
-import { MenuItemDetailModal } from "@/components/MenuItemDetailModal";
+import { MenuItemDetailModal } from "@/components/Modal/MenuItemDetailModal";
 
 import type { Menu } from "@/types/menu";
 

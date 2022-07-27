@@ -1,7 +1,9 @@
+import { useEffect, useState } from "react";
 import { client } from "@/libs/client";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { MenuByCategoryBlock } from "@/components/MenuByCategoryBlock";
+import { WelcomePopUp } from "@/components/Modal/WelcomePopUp";
 
 import type { NextPage, GetStaticProps } from "next";
 import type { Menu } from "@/types/menu";
@@ -25,9 +27,20 @@ const Home: NextPage<{ menuList: Menu[] }> = ({ menuList }) => {
     );
   });
 
+  const [isPopUpOpen, setIsPopUpOpen] = useState(false);
+
+  useEffect(() => {
+    if (!sessionStorage.getItem("disp_popup")) {
+      sessionStorage.setItem("disp_popup", "on");
+      setIsPopUpOpen(true);
+    }
+  }, []);
+
   return (
     <>
       <Header />
+
+      <WelcomePopUp isPopUpOpen={isPopUpOpen} setIsPopUpOpen={setIsPopUpOpen} />
 
       <main className="w-full min-h-screen my-8 mx-auto">
         <div className="w-11/12 md:8/12 lg:w-6/12 mx-auto py-6">
