@@ -26,7 +26,7 @@ export const MenuItemDetailModal: VFC<{
         onClick={openModal}
       >
         <div className="flex items-center">
-          <div className="h-20 w-20 mr-2">
+          <div className="flex justify-center h-20 w-20 mr-2">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={imgURL}

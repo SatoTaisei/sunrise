@@ -19,14 +19,15 @@ export const MenuItem: VFC<{ menu: Menu }> = ({ menu }) => {
   return (
     <div className="flex items-center my-10">
       {/* MenuItemWithModalLink */}
-      {img && description ? (
+      {img ? (
         <MenuItemDetailModal
           name={name}
           imgURL={img.url}
           tag={tag}
           // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
           message={message!}
-          description={description}
+          // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+          description={description!}
         />
       ) : (
         <div className="ml-4">
