@@ -84,10 +84,10 @@ export const MenuItemDetailModal: VFC<{
               >
                 {/* Modal内コンテンツ */}
                 <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
-                  <picture>
+                  <div className="flex justify-center">
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img src={imgURL} alt="" className="object-cover" />
-                  </picture>
+                  </div>
                   <div className="flex items-center pt-8">
                     {tag &&
                       tag.map((tag) => (
