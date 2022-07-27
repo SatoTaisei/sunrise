@@ -34,7 +34,7 @@ const Home: NextPage<{ menuList: Menu[] }> = ({ menuList }) => {
       sessionStorage.setItem("disp_popup", "on");
       setIsPopUpOpen(true);
     }
-  }, []);
+  }, [isPopUpOpen]);
 
   return (
     <>
