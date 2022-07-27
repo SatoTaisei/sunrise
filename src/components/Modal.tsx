@@ -22,7 +22,7 @@ export const Modal: VFC<{
     <>
       {/* Modalクリックエリア */}
       <a
-        className="block w-full cursor-pointer drop-shadow-md bg-white rounded-2xl p-2"
+        className="block w-full cursor-pointer drop-shadow-md bg-white rounded-2xl px-2 py-4"
         onClick={openModal}
       >
         <div className="flex items-center">

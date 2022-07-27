@@ -17,7 +17,7 @@ export const MenuItem: VFC<{ menu: Menu }> = ({ menu }) => {
   }
 
   return (
-    <div className="flex items-center my-8">
+    <div className="flex items-center my-10">
       {/* MenuItemWithModalLink */}
       {img && description ? (
         <Modal

@@ -32,7 +32,7 @@ const Home: NextPage<{ menuList: Menu[] }> = ({ menuList }) => {
       <main className="w-full min-h-screen my-8 mx-auto">
         <div className="w-11/12 md:8/12 lg:w-6/12 mx-auto py-6">
           <h2 className="font-extrabold text-5xl pb-4 pt-32 ml-4">MENU</h2>
-          <hr className="w-12 border border-black bg-black ml-5" />
+          <hr className="w-16 border rounded border-black bg-black ml-5" />
           {sortedByCategoryList.map((byCategoryList, index) => (
             <MenuByCategoryBlock key={index} byCategoryList={byCategoryList} />
           ))}
