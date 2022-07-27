@@ -29,7 +29,7 @@ export const MenuItem: VFC<{ menu: Menu }> = ({ menu }) => {
           description={description}
         />
       ) : (
-        <div>
+        <div className="ml-4">
           {/* MenuItemWithoutImg */}
           <div className="flex items-center">
             {tag.map((tag, index) => (
