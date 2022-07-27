@@ -28,11 +28,7 @@ export const MenuItemDetailModal: VFC<{
         <div className="flex items-center">
           <div className="flex justify-center h-20 w-20 mr-2">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src={imgURL}
-              alt=""
-              className="h-20 w-20 object-cover max-w-fit"
-            />
+            <img src={imgURL} alt="" className="h-20 object-cover max-w-fit" />
           </div>
           <div>
             <div className="flex items-center">
@@ -86,7 +82,7 @@ export const MenuItemDetailModal: VFC<{
                 <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
                   <div className="flex justify-center">
                     {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img src={imgURL} alt="" className="object-cover" />
+                    <img src={imgURL} alt="" className="h-64 object-cover" />
                   </div>
                   <div className="flex items-center pt-8">
                     {tag &&
