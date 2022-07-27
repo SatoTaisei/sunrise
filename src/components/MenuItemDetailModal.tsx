@@ -1,7 +1,7 @@
 import { Fragment, useState, VFC } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 
-export const Modal: VFC<{
+export const MenuItemDetailModal: VFC<{
   imgURL: string;
   name: string;
   tag: string[];
