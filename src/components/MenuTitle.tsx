@@ -16,11 +16,11 @@ export const MenuTitle: VFC<{ title: string }> = ({ title }) => {
     }
   };
   return (
-    <div className="relative ml-4">
+    <div className="relative">
       <span className="inline-block font-extrabold text-8xl text-neutral-100">
         {conversionTitle(title)}
       </span>
-      <span className="absolute flex items-center h-24 font-extrabold text-2xl top-0 pt-2">
+      <span className="absolute flex items-center h-24 font-extrabold text-2xl top-0 pt-2 ml-4">
         {conversionTitle(title)}
       </span>
     </div>
