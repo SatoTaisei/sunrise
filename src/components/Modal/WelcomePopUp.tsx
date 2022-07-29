@@ -6,7 +6,6 @@ import Logo_ORANGE_SVG from "../../../public/images/Logo_orange.svg";
 
 export const WelcomePopUp: VFC<{
   isPopUpOpen: boolean;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   setIsPopUpOpen: Dispatch<SetStateAction<boolean>>;
 }> = ({ isPopUpOpen, setIsPopUpOpen }) => {
   const closePopUp = () => {
