@@ -16,32 +16,12 @@ export const WelcomePopUp: VFC<{
     <>
       <Transition appear show={isPopUpOpen} as={Fragment}>
         <Dialog as="div" className="relative z-10" onClose={closePopUp}>
-          <Transition.Child
-            as={Fragment}
-            enter="ease-out duration-300"
-            enterFrom="opacity-0"
-            enterTo="opacity-100"
-            leave="ease-in duration-200"
-            leaveFrom="opacity-100"
-            leaveTo="opacity-0"
-          >
-            <div className="fixed inset-0" />
-          </Transition.Child>
-
           <div className="fixed inset-0 overflow-y-auto cursor-pointer">
             <div className="flex min-h-full items-center justify-center text-center">
-              <Transition.Child
-                as={Fragment}
-                enter="ease-out duration-300"
-                enterFrom="opacity-0 scale-95"
-                enterTo="opacity-100 scale-100"
-                leave="ease-in duration-200"
-                leaveFrom="opacity-100 scale-100"
-                leaveTo="opacity-0 scale-95"
-              >
+              <Transition.Child>
                 <Dialog.Panel
-                  className="w-screen h-screen flex items-center justify-center transform overflow-hidden bg-black text-left align-middle shadow-xl transition-all"
-                  onClick={() => setIsPopUpOpen(false)}
+                  className="w-screen h-screen flex items-center justify-center overflow-hidden bg-black"
+                  onClick={closePopUp}
                 >
                   {/* <Dialog.Title
                     as="h3"

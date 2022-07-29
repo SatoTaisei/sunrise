@@ -27,7 +27,7 @@ const Home: NextPage<{ menuList: Menu[] }> = ({ menuList }) => {
     );
   });
 
-  const [isPopUpOpen, setIsPopUpOpen] = useState(false);
+  const [isPopUpOpen, setIsPopUpOpen] = useState(true);
 
   useEffect(() => {
     if (!sessionStorage.getItem("disp_popup")) {
