@@ -28,7 +28,8 @@ const Home: NextPage<{ menuList: Menu[] }> = ({ menuList }) => {
 
   const getLastUpdatedTime = () => {
     // 各メニューの更新日時を取り出す
-    const updatedTime = menuList.map((item) => item.createdAt);
+    const updatedTime = menuList.map((item) => item.revisedAt);
+
     // 更新日時が新しい順に整列
     const lastUpdatedTime = updatedTime.sort((foo, bar) => {
       return foo > bar ? -1 : 1;
@@ -38,7 +39,10 @@ const Home: NextPage<{ menuList: Menu[] }> = ({ menuList }) => {
       // 日付を取り出す
       .slice(5, 10)
       // 時間を取り出す
-      .replace("-", "/")} ${lastUpdatedTime[0].slice(11, 16)}`;
+      // NOTE: 日本時間はISO 8601形式のUTC（協定世界時）に比べて9時間遅いためその点を考慮
+      .replace("-", "/")} ${
+      Number(lastUpdatedTime[0].slice(11, 13)) + 9
+    }${lastUpdatedTime[0].slice(13, 16)}`;
 
     // 最終更新日を返す
     return optimizedLastUpdatedTime;
@@ -53,7 +57,7 @@ const Home: NextPage<{ menuList: Menu[] }> = ({ menuList }) => {
           dateTime={getLastUpdatedTime()}
           className="inline-block absolute text-sm text-neutral-300 top-20 right-2 pt-1"
         >
-          更新日: {getLastUpdatedTime()}
+          update: {getLastUpdatedTime()}
         </time>
         <div className="w-11/12 md:8/12 lg:w-6/12 mx-auto py-6">
           <h2 className="font-extrabold text-5xl pb-4 pt-32 ml-4">MENU</h2>
