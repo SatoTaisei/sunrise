@@ -6,9 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint:eslint": "eslint src/**/*.{js,jsx,ts,tsx}",
+    "lint:eslint": "eslint .src/**/*.@(js|ts|tsx)",
     "lint:prettier": "prettier --check .",
-    "fix:eslint": "eslint src/**/*.{js,jsx,ts,tsx} --fix",
+    "fix:eslint": "eslint './src/**/*.@(js|ts|tsx)' --fix",
     "fix:prettier": "prettier --write .",
     "lint": "next lint",
     "prepare": "husky install"
