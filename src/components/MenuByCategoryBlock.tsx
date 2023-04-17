@@ -7,6 +7,10 @@ import type { Menu } from "@/types/menu";
 export const MenuByCategoryBlock: VFC<{ byCategoryList: Menu[] }> = ({
   byCategoryList,
 }) => {
+  if (!byCategoryList.length) {
+    return null;
+  }
+
   // kye:imgを持つメニューを上位に整列
   const sortedWithImgMenuList: Menu[] = [];
   // kye:imgを持つメニューを挿入
