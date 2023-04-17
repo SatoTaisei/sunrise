@@ -24,7 +24,7 @@ export const MenuByCategoryBlock: VFC<{ byCategoryList: Menu[] }> = ({
 
   return (
     <div className="mt-16">
-      <MenuTitle title={byCategoryList[0].category[0]} />
+      <MenuTitle title={byCategoryList[0]?.category[0]} />
       <ul>
         {sortedWithImgMenuList.map((menu) => (
           <MenuItem key={menu.id} menu={menu} />
