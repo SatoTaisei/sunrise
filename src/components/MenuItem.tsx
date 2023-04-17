@@ -34,7 +34,10 @@ export const MenuItem: VFC<{ menu: Menu }> = ({ menu }) => {
           {/* MenuItemWithoutImg */}
           <div className="flex items-center">
             {tag.map((tag, index) => (
-              <span key={index} className="text-xs font-bold text-rose-500 px-1">
+              <span
+                key={index}
+                className="text-xs font-bold text-rose-500 px-1"
+              >
                 #{tag}
               </span>
             ))}
