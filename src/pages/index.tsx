@@ -53,12 +53,6 @@ const Home: NextPage<{ menuList: Menu[] }> = ({ menuList }) => {
       <Header />
 
       <main className="w-full min-h-screen my-8 mx-auto">
-        <time
-          dateTime={getLastUpdatedTime()}
-          className="inline-block absolute text-sm text-neutral-300 top-20 right-2 pt-1"
-        >
-          update: {getLastUpdatedTime()}
-        </time>
         <div className="w-11/12 md:8/12 lg:w-6/12 mx-auto py-6">
           <h2 className="font-extrabold text-5xl pb-4 pt-32 ml-4">MENU</h2>
           <hr className="w-16 border rounded border-black bg-black ml-5" />
@@ -68,6 +62,12 @@ const Home: NextPage<{ menuList: Menu[] }> = ({ menuList }) => {
         </div>
       </main>
 
+      <time
+        dateTime={getLastUpdatedTime()}
+        className="block text-sm text-neutral-300 text-right pr-2"
+      >
+        update: {getLastUpdatedTime()}
+      </time>
       <Footer />
     </>
   );
