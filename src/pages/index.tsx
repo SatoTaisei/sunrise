@@ -34,15 +34,16 @@ const Home: NextPage<{ menuList: Menu[] }> = ({ menuList }) => {
     const lastUpdatedTime = updatedTime.sort((foo, bar) => {
       return foo > bar ? -1 : 1;
     });
+    console.log(lastUpdatedTime);
+
     // タイムスタンプを文字列に最適化
     const optimizedLastUpdatedTime = `${lastUpdatedTime[0]
       // 日付を取り出す
-      .slice(5, 10)
+      .slice(0, 10)
       // 時間を取り出す
       // NOTE: 日本時間はISO 8601形式のUTC（協定世界時）に比べて9時間遅いためその点を考慮
-      .replace("-", "/")} ${
-      Number(lastUpdatedTime[0].slice(11, 13)) + 9
-    }${lastUpdatedTime[0].slice(13, 16)}`;
+      .replace(/-/g, "/")}
+      ${Number(lastUpdatedTime[0].slice(11, 13)) + 9}${lastUpdatedTime[0].slice(13, 16)}`;
 
     // 最終更新日を返す
     return optimizedLastUpdatedTime;
@@ -62,11 +63,8 @@ const Home: NextPage<{ menuList: Menu[] }> = ({ menuList }) => {
         </div>
       </main>
 
-      <time
-        dateTime={getLastUpdatedTime()}
-        className="block text-sm text-neutral-300 text-right pr-2"
-      >
-        update: {getLastUpdatedTime()}
+      <time dateTime={getLastUpdatedTime()} className="block text-sm text-neutral-300 text-center py-2">
+        {getLastUpdatedTime()} &#x21BA;
       </time>
       <Footer />
     </>
