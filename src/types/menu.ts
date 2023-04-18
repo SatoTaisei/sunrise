@@ -13,5 +13,8 @@ export type Menu = {
   img?: {
     url: string;
   };
+  video?: {
+    url: string;
+  };
   description?: string;
 };

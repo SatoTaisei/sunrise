@@ -4,7 +4,7 @@ import { MenuItemDetailModal } from "@/components/Modal/MenuItemDetailModal";
 import type { Menu } from "@/types/menu";
 
 export const MenuItem: VFC<{ menu: Menu }> = ({ menu }) => {
-  const { message, name, genre, taste, flavor, img, description } = menu;
+  const { message, name, genre, taste, flavor, img, description, video } = menu;
 
   // tag = [genre, taste, flavor]: string[]
   const tag = [];
@@ -22,7 +22,8 @@ export const MenuItem: VFC<{ menu: Menu }> = ({ menu }) => {
       {img ? (
         <MenuItemDetailModal
           name={name}
-          imgURL={img.url}
+          imgUrl={img.url}
+          videoUrl={video?.url}
           tag={tag}
           // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
           message={message!}
@@ -34,7 +35,10 @@ export const MenuItem: VFC<{ menu: Menu }> = ({ menu }) => {
           {/* MenuItemWithoutImg */}
           <div className="flex items-center">
             {tag.map((tag, index) => (
-              <span key={index} className="text-xs font-bold text-rose-500 px-1">
+              <span
+                key={index}
+                className="text-xs font-bold text-rose-500 px-1"
+              >
                 #{tag}
               </span>
             ))}

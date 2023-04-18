@@ -2,12 +2,13 @@ import { Fragment, useState, VFC } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 
 export const MenuItemDetailModal: VFC<{
-  imgURL: string;
+  imgUrl: string;
   name: string;
   tag: string[];
   message: string;
   description: string;
-}> = ({ imgURL, name, tag, message, description }) => {
+  videoUrl?: string;
+}> = ({ imgUrl, name, tag, message, description, videoUrl }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const closeModal = () => {
@@ -28,7 +29,7 @@ export const MenuItemDetailModal: VFC<{
         <div className="flex items-center">
           <div className="flex justify-center h-20 w-20 mr-2">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={imgURL} alt="" className="h-20 object-cover max-w-fit" />
+            <img src={imgUrl} alt="" className="h-20 object-cover max-w-fit" />
           </div>
           <div>
             <div className="flex items-center">
@@ -82,7 +83,7 @@ export const MenuItemDetailModal: VFC<{
                 <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
                   <div className="flex justify-center">
                     {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img src={imgURL} alt="" className="h-64 object-cover" />
+                    <img src={imgUrl} alt="" className="h-64 object-cover" />
                   </div>
                   <div className="flex items-center pt-8">
                     {tag &&
@@ -99,15 +100,17 @@ export const MenuItemDetailModal: VFC<{
                     as="h3"
                     className="text-lg font-medium leading-6 text-gray-900"
                   >
-                    <h3 className="inline-block font-bold text-2xl py-1">
+                    <p className="inline-block font-bold text-2xl py-1">
                       {name}
-                    </h3>
+                    </p>
                   </Dialog.Title>
 
                   <p
                     dangerouslySetInnerHTML={{ __html: description }}
                     className="my-2"
                   />
+
+                  {videoUrl && <video src={videoUrl} controls />}
 
                   <div className="flex justify-center mt-4">
                     <button
