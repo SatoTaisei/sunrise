@@ -1,5 +1,5 @@
 import { VFC } from 'react';
-import { MenuItemDetailModal } from '@/components/Modal/MenuItemDetailModal';
+import { Modal } from '@/components/Modal';
 
 import type { Menu } from '@/types/menu';
 
@@ -20,7 +20,7 @@ export const MenuItem: VFC<{ menu: Menu }> = ({ menu }) => {
 		<div className="flex items-center my-10">
 			{/* MenuItemWithModalLink */}
 			{img ? (
-				<MenuItemDetailModal
+				<Modal
 					name={name}
 					imgUrl={img.url}
 					videoUrl={video?.url}
