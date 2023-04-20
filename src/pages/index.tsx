@@ -6,6 +6,8 @@ import { MenuByCategoryBlock } from '@/components/MenuByCategoryBlock';
 import type { NextPage, GetStaticProps } from 'next';
 import type { Menu } from '@/types/menu';
 
+const HOURS_PER_DAY = 24;
+
 const Home: NextPage<{ menuList: Menu[] }> = ({ menuList }) => {
 	// TODO: hooksに切り出す
 	const categoryList = [`ワイン`, `日本酒`, `焼酎`, `リキュール`];
@@ -35,15 +37,23 @@ const Home: NextPage<{ menuList: Menu[] }> = ({ menuList }) => {
 			return foo > bar ? -1 : 1;
 		});
 
+		console.log(lastUpdatedTime);
+
 		// タイムスタンプを文字列に最適化
-		const optimizedLastUpdatedTime = `${lastUpdatedTime[0]
-			// 日付を取り出す
-			.slice(0, 10)
-			// 時間を取り出す
-			// NOTE: 日本時間はISO 8601形式のUTC（協定世界時）に比べて9時間遅いためその点を考慮
-			.replace(/-/g, '/')} ${
-			Number(lastUpdatedTime[0].slice(11, 13)) + 9
-		}${lastUpdatedTime[0].slice(13, 16)}`;
+		// 2023-04-19T03:01:29.356Z -> 2023/04/19 12:01
+		const optimizedLastUpdatedTime = `
+			${lastUpdatedTime[0].slice(0, 8).replace(/-/g, '/')}${
+			Number(lastUpdatedTime[0].slice(11, 13)) + 9 < HOURS_PER_DAY
+				? lastUpdatedTime[0].slice(8, 10)
+				: Number(lastUpdatedTime[0].slice(8, 10)) + 1
+		}
+			${
+				Number(lastUpdatedTime[0].slice(11, 13)) + 9 < HOURS_PER_DAY
+					? Number(lastUpdatedTime[0].slice(11, 13)) + 9
+					: Number(lastUpdatedTime[0].slice(11, 13)) + 9 - HOURS_PER_DAY
+			}
+			${lastUpdatedTime[0].slice(13, 16)}
+		`;
 
 		// 最終更新日を返す
 		return optimizedLastUpdatedTime;
