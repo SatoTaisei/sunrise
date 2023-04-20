@@ -1,9 +1,13 @@
 {
+	"editor.formatOnSave": true,
+	"editor.codeActionsOnSave": {
+		"source.fixAll.eslint": true,
+		"source.fixAll.stylelint": true,
+		"source.addMissingImports": true
+	},
 	"editor.quickSuggestions": { "strings": true },
-	"editor.codeActionsOnSave": { "source.fixAll.eslint": true },
 	"eslint.validate": ["javascript"],
 	"editor.defaultFormatter": "esbenp.prettier-vscode",
-	"editor.formatOnSave": true,
 	"editor.formatOnPaste": true,
 	"editor.formatOnType": true,
 	"[typescript]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
