@@ -1,8 +1,8 @@
 import Image from 'next/image';
 import { VFC } from 'react';
 
-import Logo_ORANGE_PNG from '../../public/images/Logo_orange.png';
-import Logo_ORANGE_SVG from '../../public/images/Logo_orange.svg';
+import LOGO_ORANGE_PNG from '../../public/images/Logo_orange.png';
+import LOGO_ORANGE_SVG from '../../public/images/Logo_orange.svg';
 
 export const Header: VFC = () => {
 	return (
@@ -10,13 +10,13 @@ export const Header: VFC = () => {
 			<h1 className="relative w-40 h-20">
 				<picture>
 					<Image
-						src={Logo_ORANGE_SVG}
+						src={LOGO_ORANGE_SVG}
 						alt=""
 						layout="fill"
 						objectFit="contain"
 					/>
 					<Image
-						src={Logo_ORANGE_PNG}
+						src={LOGO_ORANGE_PNG}
 						alt=""
 						layout="fill"
 						objectFit="contain"
