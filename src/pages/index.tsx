@@ -37,8 +37,6 @@ const Home: NextPage<{ menuList: Menu[] }> = ({ menuList }) => {
 			return foo > bar ? -1 : 1;
 		});
 
-		console.log(lastUpdatedTime);
-
 		// タイムスタンプを文字列に最適化
 		// 2023-04-19T03:01:29.356Z -> 2023/04/19 12:01
 		const optimizedLastUpdatedTime = `
