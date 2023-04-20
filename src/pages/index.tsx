@@ -1,10 +1,10 @@
-import { client } from '@/libs/client';
-import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
+import { Header } from '@/components/Header';
 import { MenuByCategoryBlock } from '@/components/MenuByCategoryBlock';
+import { client } from '@/libs/client';
 
-import type { NextPage, GetStaticProps } from 'next';
 import type { Menu } from '@/types/menu';
+import type { NextPage, GetStaticProps } from 'next';
 
 const HOURS_PER_DAY = 24;
 

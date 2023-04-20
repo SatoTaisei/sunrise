@@ -1,4 +1,5 @@
 import { VFC } from 'react';
+
 import { Modal } from '@/components/Modal';
 
 import type { Menu } from '@/types/menu';

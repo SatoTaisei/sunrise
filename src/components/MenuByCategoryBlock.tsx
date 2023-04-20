@@ -1,6 +1,7 @@
 import { VFC } from 'react';
-import { MenuTitle } from '@/components/MenuTitle';
+
 import { MenuItem } from '@/components/MenuItem';
+import { MenuTitle } from '@/components/MenuTitle';
 
 import type { Menu } from '@/types/menu';
 

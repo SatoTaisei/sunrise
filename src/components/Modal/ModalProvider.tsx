@@ -1,5 +1,6 @@
-import type { ModalProps } from './Modal';
 import { VFC } from 'react';
+
+import type { ModalProps } from './Modal';
 
 type Props = {
 	openModal: () => void;

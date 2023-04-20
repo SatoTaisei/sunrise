@@ -1,6 +1,7 @@
-import type { ModalProps } from './Modal';
-import { Fragment, VFC } from 'react';
 import { Dialog, Transition } from '@headlessui/react';
+import { Fragment, VFC } from 'react';
+
+import type { ModalProps } from './Modal';
 
 type Props = {
 	isOpen: boolean;

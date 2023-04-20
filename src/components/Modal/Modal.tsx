@@ -1,6 +1,7 @@
 import { useState, VFC } from 'react';
-import { ModalProvider } from './ModalProvider';
+
 import { ModalDialog } from './ModalDialog';
+import { ModalProvider } from './ModalProvider';
 
 export type ModalProps = {
 	imgUrl: string;
